@@ -5,11 +5,22 @@ import (
 )
 
 func TestToLower(t *testing.T) {
-	got := ToLower("Hello my name is KAMAL")
 
-	want := "hello my name is kamal"
+	type addTest struct {
+		got, want string
+	}
 
-	if got != want {
-		t.Errorf("Function1() = %s; expected %s", got, want)
+	addTests := []addTest{
+		{"hello", "hello"},
+		{"HELLO", "hello"},
+		{"Hello My Name is KAMAL", "hello my name is kamal"},
+	}
+
+	for _, test := range addTests {
+		got := ToLower(test.got)
+
+		if got != test.want {
+			t.Errorf("Function1() = %s; expected %s", got, test.want)
+		}
 	}
 }
