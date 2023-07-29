@@ -5,7 +5,7 @@ func ToUpper(s string) string {
 
 	for _, ch := range s {
 		if ch >= 'a' && ch <= 'z' {
-			res += string(ch - 'a' + 'Z')
+			res += string(ch - 'a' + 'A')
 		} else {
 			res += string(ch)
 		}
