@@ -1,13 +1,11 @@
-package test
+package helper
 
 import (
 	"testing"
-
-	"github.com/tgkzz/helper"
 )
 
 func TestToUpper(t *testing.T) {
-	got := helper.ToUpper("Hello my name is KAMAL")
+	got := ToUpper("Hello my name is KAMAL")
 
 	want := "HELLO MY NAME IS KAMAL"
 

@@ -1,13 +1,11 @@
-package test
+package helper
 
 import (
 	"testing"
-
-	"github.com/tgkzz/helper"
 )
 
 func TestToLower(t *testing.T) {
-	got := helper.ToLower("Hello my name is KAMAL")
+	got := ToLower("Hello my name is KAMAL")
 
 	want := "hello my name is kamal"
 
