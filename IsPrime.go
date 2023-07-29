@@ -1,33 +1,23 @@
 package helper
 
-func Binarray(a []int) int {
-	max := 0
-
-	if len(a) == 1 {
-		return 0
+func IsPrime(n int) bool {
+	if n <= 1 {
+		return false
 	}
 
-	if len(a) == 2 {
-		if a[0] != a[1] {
-			return 2
+	if n == 2 {
+		return true
+	}
+
+	if n%2 == 0 {
+		return false
+	}
+
+	for i := 3; i*i <= n; i++ {
+		if n%i == 0 {
+			return false
 		}
 	}
 
-	for i := 1; i < len(a); i++ {
-		if a[i] != a[i-1] {
-			count := 1
-			for j := i + 1; j < len(a); j++ {
-				if a[j] != a[j-1] {
-					count++
-				} else {
-					break
-				}
-			}
-			if count > max {
-				max = count
-			}
-		}
-	}
-
-	return max
+	return true
 }
